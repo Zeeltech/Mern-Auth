@@ -1,4 +1,6 @@
 const asyncHandler = require("express-async-handler");
+//express-async-handler jethi try catch no nakhvu pde
+//hve asyncHandler thi wrap kri daiye async function ne
 
 const Goal = require("../models/goalModel");
 
@@ -17,11 +19,13 @@ const getGoals = asyncHandler(async (req, res) => {
 // @access Private
 
 const setGoals = asyncHandler(async (req, res) => {
+  //req.body.text ma req request chhe ane body chhe e postman ma chhe jo and text chhe e attribute nu naam kahi ski e pan postman ma chhe
   if (!req.body.text) {
     res.status(400);
     throw new Error("Please add a text message");
   }
 
+  //text chhe e attribute levanu postman body mathi
   const goal = await Goal.create({
     text: req.body.text,
   });
