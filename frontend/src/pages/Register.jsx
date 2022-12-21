@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 import { FaUser } from "react-icons/fa";
 
 const Register = () => {
@@ -11,9 +11,14 @@ const Register = () => {
 
   const { name, email, password, password2 } = formData;
 
-  const onChange = () => {};
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onChange = (event) => {
+    setFormData((prevstate) => ({
+      ...prevstate,
+      [event.target.name]: event.target.value,
+    }));
+  };
+  const onSubmit = (event) => {
+    event.preventDefault(); //Will prevent from refreshign
   };
 
   return (

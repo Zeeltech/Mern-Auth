@@ -5,7 +5,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">GoalSetter</Link>
+        <Link to="/">GoalSetter</Link>{" "}
+        {/*Em kye chhe ke Goalsetter ne link aapo / ni */}
       </div>
       {/* In index.css header class ma justify content space-between chhe etle bey left and right khune rhe chhe GoalSetter and Login,Register(UL) */}
       <ul>
