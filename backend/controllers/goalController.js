@@ -29,7 +29,7 @@ const setGoals = asyncHandler(async (req, res) => {
   //text chhe e attribute levanu postman body mathi
   const goal = await Goal.create({
     text: req.body.text,
-    user: req.user.id,
+    user: req.user.id, //authMiddleware ma aapne find kryu user and req.user ma ene store kryu now we are accessing it
   });
 
   res.status(200).json({ goal });
